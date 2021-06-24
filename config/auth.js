@@ -1,8 +1,6 @@
-const getValueEnv = require('@helpers/get-value-env')
-
 module.exports = {
   JWT: {
-    expiresIn: getValueEnv('JWT_EXPIRES_IN'),
-    secretKey: getValueEnv('JWT_SECRET_KEY')
+    secretKey: process.env.JWT_SECRET_KEY,
+    expiresIn: process.env.JWT_EXPIRES_IN
   }
 }
