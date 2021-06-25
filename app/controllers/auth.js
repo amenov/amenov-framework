@@ -8,7 +8,7 @@ const configAuth = require('@config/auth')
 // SIGN-UP
 exports.signUp = async (req, res) => {
   const errors = await req.validator({
-    email: 'required|string|email|unique:account',
+    email: 'required|string|email|unique:user',
     password: 'required|string',
     passwordConfirm: 'ifExists:password|required|string|as:password'
   })

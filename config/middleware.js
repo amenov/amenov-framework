@@ -5,5 +5,12 @@ module.exports = {
   },
   cors: {
     // config
+  },
+  router: {
+    baseUrl: '/',
+    routesPath: '/routes',
+    apiDocs: {
+      title: 'API-docs'
+    }
   }
 }

@@ -22,20 +22,34 @@ module.exports = ({ express, app }) => {
   app.use(only())
   app.use(validator({ sequelize: models.sequelize }))
   app.use(whereBuilder())
-  app.use(
-    '/',
-    router(getRoutes('/routes'), {
-      middleware: '@middleware',
-      controllers: '@controllers'
-    })
-  )
 
-  if (process.env.NODE_ENV !== 'production') {
+  const useRouter = (item) => {
+    const routes = getRoutes(item.routesPath)
+
     app.use(
-      '/api-docs',
-      apiDocs(getRoutes('/routes'), {
-        title: 'API-docs'
+      item.baseUrl,
+      router(routes, {
+        middleware: '@middleware',
+        controllers: '@controllers'
       })
     )
+
+    if (process.env.NODE_ENV !== 'production' && item.apiDocs) {
+      app.use(
+        '/docs' + item.baseUrl,
+        apiDocs(
+          routes,
+          Object.assign(item.apiDocs, {
+            baseUrl: item.baseUrl === '/' ? '' : item.baseUrl
+          })
+        )
+      )
+    }
+  }
+
+  if (Array.isArray(configMiddleware.router)) {
+    configMiddleware.router.forEach((item) => useRouter(item))
+  } else {
+    useRouter(configMiddleware.router)
   }
 }
