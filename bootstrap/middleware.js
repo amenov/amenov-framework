@@ -17,13 +17,7 @@ module.exports = ({ express, app }) => {
 
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }))
-  app.use(
-    '/storage',
-    (req, res, next) => {
-      next()
-    },
-    express.static(__dirname + '/../storage')
-  )
+  app.use('/storage', express.static(__dirname + '/../storage'))
 
   app.use(only())
   app.use(validator({ sequelize: models.sequelize }))
