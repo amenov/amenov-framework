@@ -1,30 +1,32 @@
 // SIGN-UP
 exports.signUp = {
-  description: 'Регистрация',
+  description: 'Sign-up',
   bodyUI: true,
   body: {
     email: {
       type: 'string',
       required: true,
-      value: 'user@domain.zone'
+      value: 'user@domain.zone',
+      description: 'Email must be unique'
     },
-
     password: {
       type: 'string',
       required: true,
-      value: 'some-password'
+      value: 'some-password',
+      description: 'Minimum number of characters 8'
     },
     passwordConfirm: {
       type: 'string',
       required: true,
-      value: 'some-password'
+      value: 'some-password',
+      description: 'This field must be the same as "password"'
     }
   }
 }
 
 // SIGN-IN
 exports.signIn = {
-  description: 'Авторизация',
+  description: 'Sign-in',
   bodyUI: true,
   body: {
     email: {

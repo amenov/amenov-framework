@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const getValueEnv = require('@helpers/get-value-env')
+const getValueEnv = require(__dirname + '/../helpers/get-value-env')
 
 const getConnectionConfig = (mode) => ({
   [mode]: {
