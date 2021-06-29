@@ -14,12 +14,13 @@ const getRoutes = require('@helpers/get-routes')
 var packageJson = require('@root/package.json')
 
 module.exports = ({ express, app }) => {
+  app.get('/', (req, res, next) => {
+    res.send(`The Amenov Framework v${packageJson.version}`)
+  })
+
   app.use(rateLimit(configMiddleware.rateLimit))
   app.use(cors(configMiddleware.cors))
 
-  app.use('/', (req, res, next) =>
-    res.send(`The Amenov Framework v${packageJson.version}`)
-  )
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }))
   app.use('/storage', express.static(__dirname + '/../storage'))
