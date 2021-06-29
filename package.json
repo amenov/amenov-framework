@@ -1,26 +1,9 @@
 {
-  "name": "amenov-framework",
-  "description": "",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amenov/amenov-framework.git"
-  },
-  "keywords": [
-    "backend",
-    "framework"
-  ],
-  "author": "Amenov Abdulsalam <amenov.abdulsalam@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amenov/amenov-framework/issues"
-  },
-  "homepage": "https://github.com/amenov/amenov-framework#readme",
   "dependencies": {
     "amenov.express.api-docs": "^1.0.10",
     "amenov.express.only": "^1.0.0",
