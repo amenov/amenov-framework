@@ -43,7 +43,7 @@ const getRoutes = (routesPath) => {
 
 module.exports = ({ express, app, config }) => {
   app.get('/', (req, res, next) => {
-    res.send(`The Amenov Framework v${packageJson.version}`)
+    res.send(`${packageJson.description} v${packageJson.version}`)
   })
 
   const middlewareList = [

@@ -1,7 +1,7 @@
 {
-  "name": "amenov-framework-cli",
+  "name": "amenov-framework",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Amenov Framework",
   "main": "cli.js",
   "bin": {
     "amenov-framework": "cli.js"
