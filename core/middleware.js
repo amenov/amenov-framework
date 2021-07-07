@@ -57,10 +57,7 @@ module.exports = ({ express, app, config }) => {
     whereBuilder()
   ]
 
-  if (
-    Array.isArray(config.middleware.extend) &&
-    config.middleware.extend()?.length
-  ) {
+  if (config.middleware?.extend?.()?.length) {
     middleware.push(...config.middleware.extend())
   }
 

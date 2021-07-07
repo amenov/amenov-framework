@@ -6,9 +6,7 @@ module.exports = {
   },
   moduleAlias: {
     models: __dirname + '/models.js',
-
     '@root': path.resolve(),
-
     '@controllers': path.resolve('controllers'),
     '@docs': path.resolve('docs'),
     '@middleware': path.resolve('middleware'),
@@ -16,14 +14,11 @@ module.exports = {
     '@helpers': path.resolve('helpers')
   },
   middleware: {
-    // RATE-LIMIT
     rateLimit: {
       windowMs: 5 * 60 * 1000,
       max: 1000
     },
-    // CORS
     cors: {},
-    // ROUTER
     router: {
       baseUrl: '/',
       routesPath: '/routes',
