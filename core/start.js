@@ -15,7 +15,7 @@ const config = merge.recursive(
 
 setGlobal(config.global)
 
-moduleAlias.addAliases(config.middleware.moduleAlias)
+moduleAlias.addAliases(config.moduleAlias)
 
 const app = express()
 

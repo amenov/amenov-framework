@@ -4,6 +4,17 @@ module.exports = {
   server: {
     port: process.env.PORT ?? 5000
   },
+  moduleAlias: {
+    models: __dirname + '/models.js',
+
+    '@root': path.resolve(),
+
+    '@controllers': path.resolve('controllers'),
+    '@docs': path.resolve('docs'),
+    '@middleware': path.resolve('middleware'),
+    '@routes': path.resolve('routes'),
+    '@helpers': path.resolve('helpers')
+  },
   middleware: {
     // RATE-LIMIT
     rateLimit: {
@@ -19,17 +30,6 @@ module.exports = {
       apiDocs: {
         title: 'API-docs'
       }
-    },
-    moduleAlias: {
-      models: __dirname + '/models.js',
-
-      '@root': path.resolve(),
-
-      '@controllers': path.resolve('controllers'),
-      '@docs': path.resolve('docs'),
-      '@middleware': path.resolve('middleware'),
-      '@routes': path.resolve('routes'),
-      '@helpers': path.resolve('helpers')
     }
   }
 }

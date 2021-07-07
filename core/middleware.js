@@ -59,9 +59,9 @@ module.exports = ({ express, app, config }) => {
 
   if (
     Array.isArray(config.middleware.extend) &&
-    config.middleware.extend?.length
+    config.middleware.extend()?.length
   ) {
-    middleware.push(...config.middleware.extend)
+    middleware.push(...config.middleware.extend())
   }
 
   for (const middleware of middlewareList) {
