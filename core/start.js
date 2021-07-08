@@ -10,7 +10,7 @@ const config = merge.recursive(
   require(path.resolve('config'))
 )
 
-if (config.server.multiPocessing && cluster.isMaster) {
+if (config.server.multiProcessing && cluster.isMaster) {
   for (let i = 0; i < os.cpus().length; i++) {
     cluster.fork()
   }

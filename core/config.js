@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   server: {
-    multiPocessing: false,
+    multiProcessing: false,
     port: process.env.PORT ?? 5000
   },
   moduleAlias: {
