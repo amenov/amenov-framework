@@ -1,6 +1,6 @@
 {
   "name": "amenov-framework",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The Amenov Framework",
   "main": "cli.js",
   "bin": {
