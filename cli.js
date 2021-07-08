@@ -8,7 +8,7 @@ const rimraf = require('rimraf')
 const argv = process.argv.slice(2)
 
 function start(bin, ...arg) {
-  execa(bin, [...arg, `${__dirname}/core/start`], {
+  execa(bin, [...arg, `${__dirname}/core/start.js`], {
     stdin: process.stdin,
     stdout: process.stdout,
     stderr: process.stderr
