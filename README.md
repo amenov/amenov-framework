@@ -32,6 +32,7 @@ module.exports = {
     multiProcessing: false, // default
     port: process.env.PORT ?? 5000 // default
   },
+  // Add your module aliases so they are always at hand
   moduleAlias: {
     '@utils': __dirname + '/utils'
   },
