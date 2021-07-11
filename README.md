@@ -31,6 +31,7 @@ npx sequelize db:seed:all
 - docs
 - helpers
 - middleware
+- routes
 - storage
 
 ## Config.js
