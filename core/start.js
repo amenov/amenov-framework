@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const merge = require('merge')
 const path = require('path')
 const cluster = require('cluster')
 const os = require('os')
 
-const server = require('./server')
+const server = require(__dirname + '/server')
 
 const config = merge.recursive(
   require(__dirname + '/config'),
