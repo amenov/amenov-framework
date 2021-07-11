@@ -21,6 +21,18 @@ npx sequelize db:seed:all
 
 `npm run dev` or `npm run start`
 
+## Directory Structure
+
+- controllers
+- database:
+  - migrations
+  - models
+  - seeders
+- docs
+- helpers
+- middleware
+- storage
+
 ## Config.js
 
 ```javascript
