@@ -7,8 +7,8 @@ const rimraf = require('rimraf')
 
 const argv = process.argv.slice(2)
 
-function start(bin, ...arg) {
-  execa(bin, [...arg, `${__dirname}/core/start.js`], {
+function start(bin) {
+  execa(bin, [`${__dirname}/core/start.js`], {
     stdin: process.stdin,
     stdout: process.stdout,
     stderr: process.stderr
@@ -41,7 +41,7 @@ switch (argv[0]) {
     break
 
   case 'start':
-    start('pm2', 'start')
+    start('node')
     break
 
   case 'init':
