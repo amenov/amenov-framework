@@ -2,8 +2,8 @@ const path = require('path')
 
 module.exports = {
   global: {
-    controller: (filename) => (method) => filename + '.' + method,
-    pluralize: (number, words, concat) => {
+    $controller: (filename) => (method) => filename + '.' + method,
+    $pluralize: (number, words, concat) => {
       const result =
         words[
           number % 100 > 4 && number % 100 < 20
@@ -13,7 +13,7 @@ module.exports = {
 
       return concat ? number + ' ' + result : result
     },
-    env: (envKey, defaultValue) => process.env[envKey] ?? defaultValue ?? null
+    $env: (envKey, defaultValue) => process.env[envKey] ?? defaultValue ?? null
   },
   server: {
     multiProcessing: false,
@@ -34,6 +34,9 @@ module.exports = {
       max: 1000
     },
     cors: {},
+    validator: {
+      locale: 'en'
+    },
     router: {
       baseUrl: '/',
       routesPath: '/routes',
