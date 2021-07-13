@@ -40,6 +40,6 @@
     "module-alias": "^2.2.2",
     "mysql2": "^2.2.5",
     "rimraf": "^3.0.2",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.5"
   }
 }

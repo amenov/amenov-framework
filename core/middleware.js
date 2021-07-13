@@ -24,7 +24,7 @@ module.exports = ({ config, express, app }) => {
     config.middleware.rateLimit && rateLimit(config.middleware.rateLimit),
     config.middleware.cors && cors(config.middleware.cors),
     only(),
-    validator({ sequelize: models.sequelize }),
+    validator({ sequelize: models.sequelize, ...config.middleware.validator }),
     wherebuilder()
   ]
 
