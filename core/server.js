@@ -8,7 +8,9 @@ module.exports = (config) => {
 
   const app = express()
 
-  for (const [key, value] of Object.entries(config.global)) {
+  for (const [key, value] of Object.entries(
+    Object.assign(config.global, require(__dirname + '/global'))
+  )) {
     global[key] = value
   }
 

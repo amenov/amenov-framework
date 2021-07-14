@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "amenov.express.api-docs": "^1.0.10",
+    "amenov.express.api-docs": "^1.0.11",
     "amenov.express.only": "^1.1.2",
-    "amenov.express.router": "^1.0.0",
+    "amenov.express.router": "^1.0.1",
     "amenov.express.validator": "^1.1.0",
     "amenov.express.wherebuilder": "^1.0.0",
     "amenov.queue": "^1.0.0",

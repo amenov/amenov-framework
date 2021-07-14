@@ -1,20 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  global: {
-    $controller: (filename) => (method) => filename + '.' + method,
-    $pluralize: (number, words, concat) => {
-      const result =
-        words[
-          number % 100 > 4 && number % 100 < 20
-            ? 2
-            : [2, 0, 1, 1, 1, 2][Math.min(number % 10, 5)]
-        ]
-
-      return concat ? number + ' ' + result : result
-    },
-    $env: (envKey, defaultValue) => process.env[envKey] ?? defaultValue ?? null
-  },
+  global: {},
   server: {
     multiProcessing: false,
     port: process.env.PORT ?? 5000
