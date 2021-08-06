@@ -15,7 +15,7 @@ Copy ".env.example" -> ".env" and add your private key to JWT_SECRET_KEY etc.
 > Note: Don't forget to set up your database for the next step!
 
 ```sh
-npx install && npm install -g nodemon
+npm install && npm install -g nodemon
 
 npx sequelize db:migrate
 npx sequelize db:seed:all
@@ -41,7 +41,7 @@ npx sequelize db:seed:all
 ```javascript
 module.exports = {
   global: {
-    $test: 123
+    test: 123
   },
   server: {
     multiProcessing: false, // default
@@ -66,15 +66,18 @@ module.exports = {
       apiDocs: {
         title: 'API-docs' // default
       }
-    }
+    },
     // Add your global middleware
-    extend: () => [require('@middleware/some'), ...]
-  }
+    extend: () => [require('@middleware/global/some'), ...]
+  },
+  master(config) {
+    console.log('I am working in the wizard when multiprocessing is running')
+  },
   start({ config, express, app, server }) {
     // Will be executed when the application starts
 
+    // Calling a global variable
     console.log('Hello!', $test) // Hello 123
   }
 }
-
 ```

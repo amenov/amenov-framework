@@ -41,5 +41,8 @@
     "mysql2": "^2.2.5",
     "rimraf": "^3.0.2",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
   }
 }
