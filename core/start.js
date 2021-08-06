@@ -22,7 +22,7 @@ for (const [key, value] of Object.entries(
 }
 
 if (config.server.multiProcessing && cluster.isMaster) {
-  if (typeof config.start === 'function') {
+  if (typeof config.master === 'function') {
     config.master(config)
   }
 
