@@ -33,6 +33,7 @@ module.exports = {
     }
     // extend: () => []
   }
+  // init(config) {},
   // master(config) {},
   // start({ config, express, app, server }) {},
 }

@@ -7,12 +7,14 @@ module.exports = (config) => {
 
   middleware({ config, express, app })
 
+  // RUN SERVER
   const server = app.listen(config.server.port, () => {
     console.log('App listening on port: ' + config.server.port)
     console.log('Press Ctrl+C to quit.')
   })
 
+  // RUN START
   if (typeof config.start === 'function') {
-    config.start({ config, express, app, server })
+    config.start({ config, app, server })
   }
 }
